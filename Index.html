@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun Heng - Data Analyst/Scientist Portfolio</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background-color: #c0392b;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .card-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid white;
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Add a profile picture if available -->
+        <!-- <img src="profile.jpg" alt="Jun Heng" class="profile-pic"> -->
+        <h1>Tan Jun Heng</h1>
+        <p class="tagline">Data Analyst | Data Scientist | Machine Learning Enthusiast</p>
+        <p>I'm currently open to new opportunities where I can continue to grow, solve impactful problems, and contribute to a data-driven team.</p>
+        <a href="https://www.linkedin.com/in/jun-heng-tan-b67a92234/" class="cta-button" target="_blank">Get In Touch</a>
+
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <p>Passionate data professional with experience in transforming complex data into actionable insights. Skilled in statistical analysis, machine learning, and data visualization. Committed to continuous learning and applying data-driven approaches to solve real-world problems.</p>
+            
+            <div class="skill-badges">
+                <span class="badge">Python</span>
+                <span class="badge">SQL</span>
+                <span class="badge">R</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">Data Visualization</span>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">NumPy</span>
+                <span class="badge">Scikit-learn</span>
+                <span class="badge">TensorFlow</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎓 Certifications</h2>
+            <ul>
+            <li>📜 <strong>Bacherlor's Degree of Computer Science(Big Data)</strong> — <em>Issued by University of Wollongong</em></li>
+            <li>📜 <strong>AWS Certified Cloud Practitioner</strong> — <em>Issued by Amazon Web Services</em></li>
+            <li>📜 <strong>DataScience Bootcamp</strong> — <em>Issued by Vertical Institute</em></li>
+            </ul>
+        </section>
+        
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects & Articles</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Topic Modeling Face-Off: Comparing BERTopic vs LDA vs Word2Vec</h3>
+                    <p>These techniques can:</p>
+                    <ul>
+                    <li>Automate customer support ticket routing (<strong>BERTopic</strong>)</li>
+                    <li>Analyze survey responses at scale (<strong>LDA</strong>)</li>
+                    <li>Improve search relevance (<strong>Word2Vec</strong>)</li>
+                    <a href="#" class="card-link">Read on Medium <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-cloud"></i> Future Work: Cloud Projects</h2>
+            <p style="margin-top: 1.5rem; text-align: center; font-style: italic;">
+                Stay tuned for updates on these exciting projects!
+            </p>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <p>I'm always interested in hearing about new opportunities, collaborations, or just chatting about data science and machine learning.</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+                <a href="https://www.linkedin.com/in/jun-heng-tan-b67a92234/" style="color: var(--secondary); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/jhwalking" style="color: var(--secondary); font-size: 1.5rem;"><i class="fab fa-github"></i></a>
+                <a href="#" style="color: var(--secondary); font-size: 1.5rem;"><i class="fab fa-medium"></i></a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        © 2024 Jun Heng | Built with <i class="fas fa-heart" style="color: var(--accent);"></i> & VS Code
+    </footer>
+</body>
+</html>
